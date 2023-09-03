@@ -93,3 +93,21 @@ if (formsEdit) {
   });
 }
 
+$(document).on("click", "#btn_delete", function (e) {
+  e.preventDefault();
+  var link = $(this).attr("href");
+  Swal.fire({
+    title: "Are you sure you want to delete the data?",
+    text: "Data will be deleted permanently!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Delete!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      window.location = link;
+    }
+  });
+});
+

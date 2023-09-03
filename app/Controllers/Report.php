@@ -255,4 +255,19 @@ class Report extends BaseController
         session()->setFlashdata('success', 'You have successfully changed image a report');
         return redirect()->back();
     }
+
+    public function delete(int $id)
+    {
+        $dataReport = $this->ModelReports->find($id);
+        if ($dataReport) {
+            $filePath = ROOTPATH . 'public/uploads/report/' . $dataReport['image'];
+            unlink($filePath);
+            $this->ModelReports->delete($id);
+            session()->setFlashdata('success', 'Report data has been successfully deleted');
+        } else {
+            session()->setFlashdata('error', 'Report data failed to delete');
+        }
+
+        return redirect()->back();
+    }
 }
