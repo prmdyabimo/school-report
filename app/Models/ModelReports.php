@@ -35,6 +35,18 @@ class ModelReports extends Model
         return $result;
     }
 
+    public function getReportById(int $id)
+    {
+        $builder = $this->db->table('reports');
+        $builder->select('reports.*, users.name, users.telephone, users.email')
+            ->join('users', 'users.id = reports.id_user', 'left')
+            ->where('reports.id', $id)
+            ->orderBy('reports.updated_at', 'DESC');
+
+        $result = $builder->get()->getRowArray();
+        return $result;
+    }
+
     public function getReportByUserId(int $id)
     {
         $builder = $this->db->table('reports');

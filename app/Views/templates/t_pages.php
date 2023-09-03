@@ -76,22 +76,6 @@
                 selector: 'td:nth-child(2)'
             }
         });
-
-        new DataTable('#tableMateriSession', {
-            colReorder: true,
-            responsive: true,
-            rowReorder: {
-                selector: 'td:nth-child(2)'
-            }
-        });
-
-        new DataTable('#tableData', {
-            colReorder: true,
-            responsive: true,
-            rowReorder: {
-                selector: 'td:nth-child(2)'
-            }
-        });
     </script>
 
     <!-- AOS Animate -->

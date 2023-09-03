@@ -30,3 +30,34 @@ if (formsRegister) {
     });
   });
 }
+
+// SAVE
+const formsSave = document.querySelectorAll("#form_save");
+const btnsSave = document.querySelectorAll("#btn_save");
+
+if (formsSave) {
+  btnsSave.forEach((btnSave, index) => {
+    btnSave.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      Swal.fire({
+        title: "Are you sure you want to add data?",
+        text: "The data will be saved",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Save!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const form = formsSave[index];
+          if (form instanceof HTMLFormElement) {
+            form.submit();
+          } else {
+            console.error(`formsSave[${index}] is not a valid form element.`);
+          }
+        }
+      });
+    });
+  });
+}

@@ -35,7 +35,8 @@ class Reports extends Migration
                 'type' => 'TEXT'
             ],
             'response' => [
-                'type' => 'TEXT'
+                'type' => 'TEXT',
+                'null' => true
             ],
             'status' => [
                 'type' => 'TEXT',
