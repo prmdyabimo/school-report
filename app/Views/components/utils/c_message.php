@@ -2,7 +2,7 @@
     <script>
         Swal.fire({
             icon: 'success',
-            title: 'Berhasil',
+            title: 'Success',
             text: '<?= session()->getFlashdata('success'); ?>'
         });
     </script>
@@ -10,7 +10,7 @@
     <script>
         Swal.fire({
             icon: 'error',
-            title: 'Gagal',
+            title: 'Failed',
             text: '<?= session()->getFlashdata('error'); ?>',
         })
     </script>
