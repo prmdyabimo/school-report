@@ -1,4 +1,4 @@
-<button data-aos="zoom-in" data-aos-duration="2000" data-te-toggle="modal" data-te-target="#register" data-te-ripple-init data-te-ripple-color="light" type="button" class="border-2 border-[#FFF] mt-4 inline-block w-full rounded px-6 py-2 text-md tracking-wide font-bold uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]" type="submit" data-te-ripple-init data-te-ripple-color="light" style="background-color: #94C7F6;">
+<button data-aos="zoom-in" data-aos-duration="2000" data-te-toggle="modal" data-te-target="#register" data-te-ripple-init data-te-ripple-color="light" type="button" class="border-2 border-[#FFF] mt-4 inline-block w-full rounded px-6 py-2 text-md tracking-wide font-bold uppercase leading-normal text-[#A50022] shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]" type="submit" data-te-ripple-init data-te-ripple-color="light" style="background-color: #94C7F6;">
     REGISTER
 </button>
 
@@ -20,7 +20,8 @@
 
             <!--Form Register-->
             <form id="form_register" method="POST" action="/register">
-                <?php csrf_field(); ?>
+                <?= csrf_field(); ?>
+
                 <!--Form Input-->
                 <div class="relative p-4">
                     <div class="flex gap-2 mb-3">
@@ -72,7 +73,7 @@
 
                 <!--Form Button-->
                 <div class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-300 border-opacity-100 p-4">
-                    <button id="btn_register" class="border-2 border-[#FFF] inline-block w-full rounded px-6 py-2 text-md tracking-wide font-bold uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]" type="button" data-te-ripple-init data-te-ripple-color="light" style="background-color: #94C7F6;">
+                    <button id="btn_register" class="border-2 border-[#FFF] inline-block w-full rounded px-6 py-2 text-md tracking-wide font-bold uppercase leading-normal text-[#A50022] shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]" type="button" data-te-ripple-init data-te-ripple-color="light" style="background-color: #94C7F6;">
                         REGISTER
                     </button>
                 </div>
