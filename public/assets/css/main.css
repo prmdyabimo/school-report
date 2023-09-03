@@ -1,0 +1,15 @@
+.active {
+  background-color: #65adf0;
+  color: #A50022;
+}
+
+.dataTables_wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+/* Mengatur warna font pada elemen UIkit */
+.uk-table td,
+.uk-table th {
+  color: inherit;
+}
