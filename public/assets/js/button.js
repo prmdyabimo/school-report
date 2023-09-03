@@ -61,3 +61,35 @@ if (formsSave) {
     });
   });
 }
+
+// EDIT
+const formsEdit = document.querySelectorAll(".form_edit");
+const btnsEdit = document.querySelectorAll(".btn_edit");
+
+if (formsEdit) {
+  btnsEdit.forEach((btnEdit, index) => {
+    btnEdit.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      Swal.fire({
+        title: "Are you sure you want to change the data?",
+        text: "Data will be changed",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Change!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const form = formsEdit[index];
+          if (form instanceof HTMLFormElement) {
+            form.submit();
+          } else {
+            console.error(`formsEdit[${index}] is not a valid form element.`);
+          }
+        }
+      });
+    });
+  });
+}
+
