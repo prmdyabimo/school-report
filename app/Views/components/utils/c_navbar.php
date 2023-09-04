@@ -35,7 +35,7 @@
                                 <a style="text-decoration: none;" href="/setting" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Setting</a>
                             </li>
                             <li>
-                                <a style="text-decoration: none;" id="btn_logout" href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Logout</a>
+                                <a style="text-decoration: none;" id="btn_logout" href="/logout/<?= $data_user['id']; ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Logout</a>
                             </li>
                         </ul>
                     </div>
