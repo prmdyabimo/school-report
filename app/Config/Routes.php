@@ -24,3 +24,8 @@ $routes->get('/report-delete/(:num)', 'Report::delete/$1', ['filter' => 'auth'])
 $routes->post('/create-report', 'Report::create', ['filter' => 'auth']);
 $routes->post('/edit-report/(:num)', 'Report::edit/$1', ['filter' => 'auth']);
 $routes->post('/edit-image-report/(:num)', 'Report::editImage/$1', ['filter' => 'auth']);
+
+// SETTING
+$routes->get('/setting', 'Setting::index', ['filter' => 'auth']);
+$routes->post('/setting-profile', 'Setting::edit', ['filter' => 'auth']);
+$routes->post('/setting-image', 'Setting::editImage', ['filter' => 'auth']);

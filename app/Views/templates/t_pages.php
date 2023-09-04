@@ -58,6 +58,9 @@
     <script src="<?= base_url('assets/sweetalert2/dist/sweetalert2.all.min.js'); ?>"></script>
     <script src="<?= base_url('assets/js/button.js'); ?>"></script>
 
+    <!-- Show Hide Password -->
+    <script src="<?= base_url('assets/js/password.js'); ?>"></script>
+
     <!-- Message Error Or Success -->
     <?= $this->include('components/utils/c_message'); ?>
 
