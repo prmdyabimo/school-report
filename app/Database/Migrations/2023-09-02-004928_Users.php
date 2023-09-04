@@ -24,10 +24,11 @@ class Users extends Migration
             ],
             'telephone' => [
                 'type' => 'VARCHAR',
-                'constraint' => 25
+                'constraint' => 25,
+                'null' => true
             ],
             'image' => [
-                'type' => 'TEXT'
+                'type' => 'TEXT',
             ],
             'role' => [
                 'type' => 'TEXT'
