@@ -111,3 +111,34 @@ $(document).on("click", "#btn_delete", function (e) {
   });
 });
 
+// LOGOUT
+const btnsLogout = document.querySelectorAll("#btn_logout");
+
+if (btnsLogout) {
+  btnsLogout.forEach((btnLogout, index) => {
+    btnLogout.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const href = this.getAttribute("href");
+
+      Swal.fire({
+        title: "Are you sure you want to leave?",
+        text: "You will exit the dashboard page",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Exit!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = href;
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "You have successfully logged out",
+          });
+        }
+      });
+    });
+  });
+}

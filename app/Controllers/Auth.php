@@ -123,4 +123,10 @@ class Auth extends BaseController
         }
         return redirect()->back()->withInput();
     }
+
+    public function logout(int $id)
+    {
+        session()->destroy($id);
+        return redirect()->to('/');
+    }
 }

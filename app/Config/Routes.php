@@ -13,6 +13,9 @@ $routes->post('/register', 'Auth::register');
 // LOGIN
 $routes->post('/login', 'Auth::login');
 
+// LOGOUT
+$routes->get('/logout/(:num)', 'Auth::logout/$1', ['filter' => 'auth']);
+
 // DASHBOARD
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
 
