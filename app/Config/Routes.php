@@ -33,3 +33,16 @@ $routes->post('/edit-image-report/(:num)', 'Report::editImage/$1', ['filter' => 
 $routes->get('/setting', 'Setting::index', ['filter' => 'auth']);
 $routes->post('/setting-profile', 'Setting::edit', ['filter' => 'auth']);
 $routes->post('/setting-image', 'Setting::editImage', ['filter' => 'auth']);
+
+// USER
+$routes->get('/users', 'User::index', ['filter' => 'auth']);
+$routes->get('/user-show/(:num)', 'User::show/$1', ['filter' => 'auth']);
+$routes->post('/add-user', 'User::saveUser', ['filter' => 'auth']);
+$routes->post('/user-profile/(:num)', 'User::edit/$1', ['filter' => 'auth']);
+$routes->post('/user-image/(:num)', 'User::editImage/$1', ['filter' => 'auth']);
+
+// ADMIN
+$routes->get('/admin', 'User::admin', ['filter' => 'auth']);
+$routes->post('/add-admin', 'User::saveAdmin', ['filter' => 'auth']);
+
+$routes->get('/delete-user/(:num)', 'User::delete/$1', ['filter' => 'auth']);

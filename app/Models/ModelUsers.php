@@ -35,4 +35,25 @@ class ModelUsers extends Model
         $result = $builder->get()->getResultArray();
         return $result;
     }
+
+    public function getUser()
+    {
+        $builder = $this->db->table('users');
+        $builder->where('role', 'USER')
+            ->orderBy('created_at', 'DESC');
+
+        $result = $builder->get()->getResultArray();
+        return $result;
+    }
+
+    public function getAdmin(int $id)
+    {
+        $builder = $this->db->table('users');
+        $builder->where('role', 'ADMIN')
+            ->where('id !=', $id)
+            ->orderBy('created_at', 'DESC');
+
+        $result = $builder->get()->getResultArray();
+        return $result;
+    }
 }
