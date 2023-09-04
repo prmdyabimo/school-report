@@ -9,7 +9,7 @@ class Home extends BaseController
         helper(['form']);
 
         $data = [
-            'title'     => "Beranda School Report | SMK Negeri 17 Jakarta",
+            'title'     => "Home School Report | SMK Negeri 17 Jakarta",
         ];
 
         return view('pages/v_home', $data);
