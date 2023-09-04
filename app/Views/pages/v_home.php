@@ -19,9 +19,6 @@
             <?= $this->include('components/auth/c_login'); ?>
             <?= $this->include('components/auth/c_register'); ?>
         </div>
-        <div class="my-4" data-aos="zoom-in" data-aos-duration="2000">
-            <a href="/recovery" class="text-white font-semibold hover:text-[#94C7F6] transition-all">Forgot Password ?</a>
-        </div>
     </div>
 </div>
 
