@@ -1,7 +1,7 @@
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg my-4 py-4 px-4 bg-white">
     <div class="w-full h-full">
         <div class="flex md:flex-row flex-col w-[100%] gap-2">
-            <div data-aos="flip-left" data-aos-duration="1500" class="w-full flex flex-col border-2 rounded-lg p-2">
+            <div data-aos="fade-down" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="w-full flex flex-col border-2 rounded-lg p-2">
                 <div class="text-center">
                     <h1 class="uppercase font-bold tracking-wider text-3xl">Detail Report</h1>
                 </div>
@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <div data-aos="flip-right" data-aos-duration="1500" class="md:w-1/2 w-full flex flex-col border-2 rounded-lg p-2">
+            <div data-aos="fade-down" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="md:w-1/2 w-full flex flex-col border-2 rounded-lg p-2">
                 <div class="text-center">
                     <h1 class="uppercase font-bold tracking-wider text-3xl">Image</h1>
                 </div>
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <div data-aos="fade-down" data-aos-duration="1000" class="flex w-[100%]">
+        <div data-aos="fade-down" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="flex w-[100%]">
             <div class="w-full my-4 flex flex-col border-2 p-2 rounded-lg">
                 <div class="my-4 text-center">
                     <h1 class="uppercase font-bold tracking-wider text-3xl">Response Report</h1>

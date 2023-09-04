@@ -28,7 +28,17 @@
                     <td class="text-capitalize"><?= $value['name']; ?></td>
                     <td class="text-capitalize"><?= $value['location']; ?></td>
                     <td class="text-capitalize"><?= $value['category']; ?></td>
-                    <td class="text-capitalize"><?= $value['status']; ?></td>
+                    <td class="text-capitalize">
+                        <?php if ($value['status'] == "PROCESSED") : ?>
+                            <span class="inline-block whitespace-nowrap rounded-full bg-warning-100 px-[0.65em] pb-[0.25em] pt-[0.35em] text-center align-baseline text-[0.75em] font-bold leading-none text-warning-800">
+                                <?= $value['status']; ?>
+                            </span>
+                        <?php else : ?>
+                            <span class="inline-block whitespace-nowrap rounded-full bg-success-100 px-[0.65em] pb-[0.25em] pt-[0.35em] text-center align-baseline text-[0.75em] font-bold leading-none text-success-700">
+                                <?= $value['status']; ?>
+                            </span>
+                        <?php endif; ?>
+                    </td>
                     <td class="text-capitalize">
                         <a href="/report-detail/<?= $value['id']; ?>">
                             <button data-te-ripple-init class="bg-green-500 hover:bg-green-600 p-1.5 rounded">
