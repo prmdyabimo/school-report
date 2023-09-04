@@ -93,6 +93,39 @@ if (formsEdit) {
   });
 }
 
+// RESPONSE
+const formsResponse = document.querySelectorAll("#form_response");
+const btnsResponse = document.querySelectorAll("#btn_response");
+
+if (formsResponse) {
+  btnsResponse.forEach((btnEdit, index) => {
+    btnEdit.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      Swal.fire({
+        title: "Are you sure you want to respond to the report?",
+        text: "Reports will be responded to",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Response!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const form = formsResponse[index];
+          if (form instanceof HTMLFormElement) {
+            form.submit();
+          } else {
+            console.error(
+              `formsResponse[${index}] is not a valid form element.`
+            );
+          }
+        }
+      });
+    });
+  });
+}
+
 $(document).on("click", "#btn_delete", function (e) {
   e.preventDefault();
   var link = $(this).attr("href");

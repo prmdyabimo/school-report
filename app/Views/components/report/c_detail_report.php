@@ -50,23 +50,18 @@
                     <h1 class="uppercase font-bold tracking-wider text-3xl">Response Report</h1>
                 </div>
                 <?php if ($data_user['role'] == 'ADMIN') : ?>
-                    <form action="/edit-report/<?= $report['id']; ?>" method="post" class="mx-4">
-                        <div hidden>
-                            <input type="text" name="id_user" value="<?= $report['id_user']; ?>">
-                            <input type="text" name="location" value="<?= $report['location']; ?>">
-                            <input type="text" name="category" value="<?= $report['category']; ?>">
-                            <input type="text" name="topic" value="<?= $report['topic']; ?>">
-                            <input type="text" name="detail" value="<?= $report['detail']; ?>">
-                            <input type="text" name="image" value="<?= $report['image']; ?>">
-                        </div>
+                    <form id="form_response" action="/response/<?= $report['id']; ?>" method="post" class="mx-4">
+                        <?= csrf_field(); ?>
                         <div class="mb-4">
-                            <p class="text-red-600 font-semibold">
-                                <?= validation_show_error('response_report') ?>
-                            </p>
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="detail_report">
                                 Response
                             </label>
-                            <textarea name="response_report" id="response_report" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="5" value="<?= old('response_report'); ?>"></textarea>
+                            <textarea name="response" id="response" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="5"><?= $report['response']; ?></textarea>
+                            <?php if (validation_show_error('response')) : ?>
+                                <div class="bg-red-100 mb-2 border border-red-400 text-red-700 py-2 px-3 rounded relative" role="alert">
+                                    <span class="text-sm block sm:inline"><?= validation_show_error('response') ?></span>
+                                </div>
+                            <?php endif; ?>
                         </div>
 
                         <div class="flex">
@@ -74,7 +69,7 @@
                                 <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline" href="/report">
                                     Back
                                 </a>
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                <button id="btn_response" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                                     Response
                                 </button>
                             </div>
@@ -89,10 +84,11 @@
                                 <?= $report['response'] ?? "There has been no response from admin yet"; ?>
                             </p>
                         </div>
+                        <a class="inline-block m-2 px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out" href="/report">Back</a>
                     </div>
                 <?php endif; ?>
             </div>
         </div>
-        <a class="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out" href="/report">Back</a>
+
     </div>
 </div>

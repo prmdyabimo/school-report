@@ -58,6 +58,8 @@ class Report extends BaseController
 
     public function detail(int $id)
     {
+        helper(['form']);
+
         $sesData = session()->get();
 
         $dataUser = $this->ModelUsers->find($sesData['id']);
@@ -253,6 +255,36 @@ class Report extends BaseController
 
         $this->ModelReports->update($id, $dataReport);
         session()->setFlashdata('success', 'You have successfully changed image a report');
+        return redirect()->back();
+    }
+
+    public function response(int $id)
+    {
+        $response = $this->request->getVar('response');
+        $status = "COMPLETE";
+
+        $rules = [
+            'response'  => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required'  => 'Response is required'
+                ]
+            ]
+        ];
+
+        if (!$this->validate($rules)) {
+            session()->setFlashdata('error', 'The data you entered is invalid');
+            return redirect()->back()->withInput();
+        }
+
+        $dataResponse = [
+            'response'      => $response,
+            'status'        => $status,
+            'updated_at'    => Time::now()
+        ];
+
+        $this->ModelReports->update($id, $dataResponse);
+        session()->setFlashdata('success', 'You have successfully responded to the report');
         return redirect()->back();
     }
 
